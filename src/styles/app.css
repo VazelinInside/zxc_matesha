@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    /* background-color: #f1d3ff; */
+    background-color: #f1d3ff;
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    padding: 0px 0px 50px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block {
+    width: 90%;
+}
+
+.title {
+    font: 600 34px/1 Arial;
+    text-align: center;
+    margin: 50px 30px;
+}
+
+.block__given {
+    display: flex;
+    justify-content: space-around;
+}
+
+.information {
+    width: 500px;
+}
+
+.text {
+    font: 18px/1.5 Arial;
+}
+
+.elem {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.elem > .text {
+    width: 50%;
+}
+
+.text__input {
+    outline: none;
+    background-color: #f1d3ff;
+    width: 100px;
+    font: 18px/1.5 Arial;
+    border: none;
+}
+
+.text__select {
+    outline: none;
+    padding: 3px;
+    background-color: rgb(241, 211, 255);
+    border: none;
+    border-radius: 5px;
+    font: 18px/1.5 Arial;
+}
+
+.input__elem {
+    width: 180px;
+    padding: 3px 10px;
+    margin: 5px;
+    border: 2px solid #9f01e8;
+    border-radius: 10px;
+}
+
+.image {
+    width: 400px;
+}
+
+.block__resolve {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input {
+    width: 400px;
+}
+
+.resolve {
+    width: 500px;
+}
+
+.resolve__title {
+    font: 600 24px/1.5 Arial;
+}
+
+.button {
+    color: #f1d3ff;
+    background-color: #9f01e8;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 50px;
+    font: 18px/1.5 Arial;
+}
+
+.button:hover{
+    background-color: #ba26ff;
+}
+
+.button:active{
+    background-color: #9700dd;
+}
