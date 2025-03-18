@@ -1,22 +1,7 @@
-export const UsePyramid = (length, lengthUnit, height, heightUnit, funcVolume, funcSquareFull, funcSquareSide, funcSide) => {
+export const UsePyramid = (length, height, funcVolume, funcSquareFull, funcSquareSide, funcSide) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (lengthUnit === 'м') {
-        length = length * 100
-    } else if (lengthUnit === 'дм') {
-        length = length * 10
-    } else if (lengthUnit === 'мм') {
-        length = length / 10
-    }
-    if (heightUnit === 'м') {
-        height = height * 100
-    } else if (heightUnit === 'дм') {
-        height = height * 10
-    } else if (heightUnit === 'мм') {
-        height = height / 10
     }
     
     if (length > 0) {

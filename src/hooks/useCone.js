@@ -1,22 +1,7 @@
-export const UseCone = (generatrix, generatrixUnit, height, heightUnit, funcVolume, funcSquareFull) => {
+export const UseCone = (generatrix, height, funcVolume, funcSquareFull) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (generatrixUnit === 'м') {
-        generatrix = generatrix * 100
-    } else if (generatrixUnit === 'дм') {
-        generatrix = generatrix * 10
-    } else if (generatrixUnit === 'мм') {
-        generatrix = generatrix / 10
-    }
-    if (heightUnit === 'м') {
-        height = height * 100
-    } else if (heightUnit === 'дм') {
-        height = height * 10
-    } else if (heightUnit === 'мм') {
-        height = height / 10
     }
     
     if ((height > 0) && (generatrix > height)) {

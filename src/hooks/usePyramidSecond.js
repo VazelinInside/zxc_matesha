@@ -1,15 +1,7 @@
-export const UsePyramidSecond = (side, sideUnit, angle, funcVolume) => {
+export const UsePyramidSecond = (side, angle, funcVolume) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (sideUnit === 'м') {
-        side = side * 100
-    } else if (sideUnit === 'дм') {
-        side = side * 10
-    } else if (sideUnit === 'мм') {
-        side = side / 10
     }
     
     if (side > 0) {

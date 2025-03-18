@@ -1,15 +1,7 @@
-export const UseCylinderSecond = (diagonal, diagonalUnit, angle, funcSquareCut, funcVolume, funcSquareSide) => {
+export const UseCylinderSecond = (diagonal, angle, funcSquareCut, funcVolume, funcSquareSide) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (diagonalUnit === 'м') {
-        diagonal = diagonal * 100
-    } else if (diagonalUnit === 'дм') {
-        diagonal = diagonal * 10
-    } else if (diagonalUnit === 'мм') {
-        diagonal = diagonal / 10
     }
     
     if (diagonal > 0) {

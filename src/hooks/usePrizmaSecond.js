@@ -1,29 +1,7 @@
-export const UseVolumePrizma = (length, lengthUnit, width, widthUnit, angle, square, squareUnit, funcVolume) => {
+export const UseVolumePrizma = (length, width, angle, square, funcVolume) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (lengthUnit === 'м') {
-        length = length * 100
-    } else if (lengthUnit === 'дм') {
-        length = length * 10
-    } else if (lengthUnit === 'мм') {
-        length = length / 10
-    }
-    if (widthUnit === 'м') {
-        width = width * 100
-    } else if (widthUnit === 'дм') {
-        width = width * 10
-    } else if (widthUnit === 'мм') {
-        width = width / 10
-    }
-    if (squareUnit === 'м') {
-        square = square * 10000
-    } else if (squareUnit === 'дм') {
-        square = square * 100
-    } else if (squareUnit === 'мм') {
-        square = square / 100
     }
 
     if (length, width, angle, square) {

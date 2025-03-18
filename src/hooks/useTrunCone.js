@@ -1,22 +1,7 @@
-export const UseTrunCone = (radius, radiusUnit, radiusSecond, radiusSecondUnit, angle, funcVolume, funcSquareFull) => {
+export const UseTrunCone = (radius, radiusSecond, angle, funcVolume, funcSquareFull) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (radiusUnit === 'м') {
-        radius = radius * 100
-    } else if (radiusUnit === 'дм') {
-        radius = radius * 10
-    } else if (radiusUnit === 'мм') {
-        radius = radius / 10
-    }
-    if (radiusSecondUnit === 'м') {
-        radiusSecond = radiusSecond * 100
-    } else if (radiusSecondUnit === 'дм') {
-        radiusSecond = radiusSecond * 10
-    } else if (radiusSecondUnit === 'мм') {
-        radiusSecond = radiusSecond / 10
     }
     
     if ((radius > 0) && (radiusSecond > radius)) {

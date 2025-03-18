@@ -1,22 +1,7 @@
-export const UseSphere = (distance, radiusMini, distanceUnit, radiusMiniUnit, funcVolume, funcSquareFull) => {
+export const UseSphere = (distance, radiusMini, funcVolume, funcSquareFull) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (distanceUnit === 'м') {
-        distance = distance * 100
-    } else if (distanceUnit === 'дм') {
-        distance = distance * 10
-    } else if (distanceUnit === 'мм') {
-        distance = distance / 10
-    }
-    if (radiusMiniUnit === 'м') {
-        radiusMini = radiusMini * 100
-    } else if (radiusMiniUnit === 'дм') {
-        radiusMini = radiusMini * 10
-    } else if (radiusMiniUnit === 'мм') {
-        radiusMini = radiusMini / 10
     }
     
     if (radiusMini > 0) {

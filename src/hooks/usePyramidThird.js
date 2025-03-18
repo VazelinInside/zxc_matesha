@@ -1,22 +1,7 @@
-export const UsePyramidThird = (height, heightUnit, apothem, apothemUnit, funcSqareFull) => {
+export const UsePyramidThird = (height, apothem, funcSqareFull) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (heightUnit === 'м') {
-        height = height * 100
-    } else if (heightUnit === 'дм') {
-        height = height * 10
-    } else if (heightUnit === 'мм') {
-        height = height / 10
-    }
-    if (apothemUnit === 'м') {
-        apothem = apothem * 100
-    } else if (apothemUnit === 'дм') {
-        apothem = apothem * 10
-    } else if (apothemUnit === 'мм') {
-        apothem = apothem / 10
     }
     
     if ((height > 0) && (apothem > height)) {

@@ -1,29 +1,7 @@
-export const UseVolumeAndSquare = (length, lengthUnit, width, widthUnit, diagonal, diagonalUnit, funcVolume, funcSquare) => {
+export const UseVolumeAndSquare = (length, width, diagonal, funcVolume, funcSquare) => {
 
-    function round100(number, multitle) {
+    function round100(number) {
         return Math.round(number * 100) / 100
-    }
-
-    if (lengthUnit === 'м') {
-        length = length * 100
-    } else if (lengthUnit === 'дм') {
-        length = length * 10
-    } else if (lengthUnit === 'мм') {
-        length = length / 10
-    }
-    if (widthUnit === 'м') {
-        width = width * 100
-    } else if (widthUnit === 'дм') {
-        width = width * 10
-    } else if (widthUnit === 'мм') {
-        width = width / 10
-    }
-    if (diagonalUnit === 'м') {
-        diagonal = diagonal * 100
-    } else if (diagonalUnit === 'дм') {
-        diagonal = diagonal * 10
-    } else if (diagonalUnit === 'мм') {
-        diagonal = diagonal / 10
     }
     
     if ((diagonal ** 2 > (length ** 2 + width ** 2)) && 
