@@ -7,8 +7,10 @@ import Converter from "./UI/Сonverter";
 const SPHERE = sphere
 
 const Sphere = (props) => {
-    const [distance, setDistance] = useState('')
-    const [radiusMini, setRadiusMini] = useState('')
+    const [distance, setDistance] = useState(1)
+    const [radiusMini, setRadiusMini] = useState(1)
+    const [distanceSqrt, setDistanceSqrt] = useState(1)
+    const [radiusMiniSqrt, setRadiusMiniSqrt] = useState(1)
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
@@ -38,12 +40,22 @@ const Sphere = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">В шаре на расстоянии {distance} см от центра проведена секущая плоскость так, 
-                    что образовавшийся в сечении круг имеет радиус {radiusMini} см.</p>
+                    <p className="text">В шаре на расстоянии {distance}√{distanceSqrt} см от центра проведена секущая плоскость так, 
+                    что образовавшийся в сечении круг имеет радиус {radiusMini}√{radiusMiniSqrt} см.</p>
                     <p className="text">Найти объем, площадь полной поверхности.</p>
                     <form className="input">
-                        <UnitInput parameters={'Расстояние'} value={distance} func={setDistance}/>
-                        <UnitInput parameters={'Радиус сечения'} value={radiusMini} func={setRadiusMini}/>
+                        <UnitInput 
+                            parameters={'Расстояние'} 
+                            value={distance} 
+                            valueSqrt={distanceSqrt} 
+                            func={setDistance} 
+                            funcSqrt={setDistanceSqrt}/>
+                        <UnitInput 
+                            parameters={'Радиус сечения'} 
+                            value={radiusMini}
+                            valueSqrt={radiusMini}
+                            func={setRadiusMini}
+                            funcSqrt={setRadiusMiniSqrt}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

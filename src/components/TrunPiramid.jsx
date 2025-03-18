@@ -7,16 +7,19 @@ import Converter from "./UI/Сonverter";
 const PYRAMID = pyramid
 
 const TrunPiramid = (props) => {
-    const [lengthDown, setLengthDown] = useState('')
-    const [lengthTop, setLengthTop] = useState('')
-    const [height, setHeight] = useState('')
+    const [lengthDown, setLengthDown] = useState(1)
+    const [lengthTop, setLengthTop] = useState(1)
+    const [height, setHeight] = useState(1)
+    const [lengthDownSqrt, setLengthDownSqrt] = useState(1)
+    const [lengthTopSqrt, setLengthTopSqrt] = useState(1)
+    const [heightSqrt, setHeightSqrt] = useState(1)
     const [sideRib, setSideRib] = useState(0)
     const [squareSide, setSquareSide] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [volume, setVolume] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseTrunPiramid(lengthDown, lengthTop, height, setSideRib, setSquareSide, setSquareFull, setVolume) 
+       return UseTrunPiramid(lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, heightSqrt, setSideRib, setSquareSide, setSquareFull, setVolume) 
     } 
 
     function btnResolve() {
@@ -43,13 +46,28 @@ const TrunPiramid = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">В правильной четырехугольной усеченной пирамиде высота {height} см, 
-                    стороны нижнего основания {lengthDown} см, стороны верхнего основания{lengthTop} см.</p>
+                    <p className="text">В правильной четырехугольной усеченной пирамиде высота {height}√{heightSqrt} см, 
+                    стороны нижнего основания {lengthDown}√{lengthDownSqrt} см, стороны верхнего основания {lengthTop}√{lengthTopSqrt} см.</p>
                     <p className="text">Найти боковое ребро, площадь боковой и полной поверхности и объем.</p>
                     <form className="input">
-                        <UnitInput parameters={'Сторона нижнего основания'} value={lengthDown} func={setLengthDown}/>
-                        <UnitInput parameters={'Сторона верхнего основания'} value={lengthTop} func={setLengthTop}/>
-                        <UnitInput parameters={'Высота'} value={height} func={setHeight}/>
+                        <UnitInput 
+                            parameters={'Сторона нижнего основания'} 
+                            value={lengthDown}
+                            valueSqrt={lengthDownSqrt}
+                            func={setLengthDown}
+                            funcSqrt={setLengthDownSqrt}/>
+                        <UnitInput 
+                            parameters={'Сторона верхнего основания'} 
+                            value={lengthTop}
+                            valueSqrt={lengthTopSqrt}
+                            func={setLengthTop}
+                            funcSqrt={setLengthTopSqrt}/>
+                        <UnitInput 
+                            parameters={'Высота'} 
+                            value={height}
+                            valueSqrt={heightSqrt}
+                            func={setHeight}
+                            funcSqrt={setHeightSqrt}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

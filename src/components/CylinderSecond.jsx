@@ -8,8 +8,9 @@ import Converter from "./UI/Сonverter";
 const CYLINDER = cylinder
 
 const CylinderSecond = (props) => {
-    const [diagonal, setDiagonal] = useState('')
-    const [angle, setAngle] = useState('')
+    const [diagonal, setDiagonal] = useState(1)
+    const [diagonalSqrt, setDiagonalSqrt] = useState(1)
+    const [angle, setAngle] = useState(1)
     const [squareCut, setSquareCut] = useState(0)
     const [volume, setVolume] = useState(0)
     const [squareSide, setSquareSide] = useState(0)
@@ -41,11 +42,19 @@ const CylinderSecond = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">Диагональ осевого сечения цилиндра {diagonal} см и составляет с основанием угол {angle}<sup>o</sup>.</p>
+                    <p className="text">Диагональ осевого сечения цилиндра {diagonal}√{diagonalSqrt} см и составляет с основанием угол {angle}<sup>o</sup>.</p>
                     <p className="text">Найти площадь осевого сечения, объём и боковую поверхность цилиндра.</p>
                     <form className="input">
-                        <UnitInput parameters={'Диагональ'} value={diagonal} func={setDiagonal}/>
-                        <AngleInput  parameters={'Угол'} value={angle} func={setAngle}/>
+                        <UnitInput 
+                            parameters={'Диагональ'} 
+                            value={diagonal}
+                            valueSqrt={diagonalSqrt}
+                            func={setDiagonal}
+                            funcSqrt={setDiagonalSqrt}/>
+                        <AngleInput  
+                            parameters={'Угол'} 
+                            value={angle} 
+                            func={setAngle}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

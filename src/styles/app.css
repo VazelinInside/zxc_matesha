@@ -37,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 510px;
+    height: 520px;
 }
 
 .information {
@@ -59,11 +59,20 @@
     align-items: center;
 }
 
+.input__value {
+    display: flex;
+    align-items: center;
+}
+
 .text__input {
     outline: none;
     width: 80px;
     font: 18px/1.5 Arial;
     border: none;
+}
+
+.elem_conv .input__elem {
+    width: 160px;
 }
 
 .text__select {
@@ -75,7 +84,7 @@
 }
 
 .input__elem {
-    width: 150px;
+    width: 100px;
     padding: 3px 10px;
     margin: 5px;
     border: 2px solid #9f01e8;
@@ -85,7 +94,7 @@
 }
 
 .image {
-    width: 98%;
+    width: 80%;
 }
 
 .block__resolve {

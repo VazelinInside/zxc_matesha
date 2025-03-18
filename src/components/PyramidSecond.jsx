@@ -8,12 +8,13 @@ import Converter from "./UI/Сonverter";
 const PYRAMID = pyramid
 
 const PyramidSecond = (props) => {
-    const [side, setSide] = useState('')
-    const [angle, setAngle] = useState('')
+    const [side, setSide] = useState(1)
+    const [sideSqrt, setSideSqrt] = useState(1)
+    const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UsePyramidSecond(side, angle, setVolume) 
+       return UsePyramidSecond(side, sideSqrt, angle, setVolume) 
     } 
 
     function btnResolve() {
@@ -37,11 +38,20 @@ const PyramidSecond = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">В правильной трехугольной пирамиде боковое ребро {side} см и составляет с плоскостью основания угол {angle}<sup>o</sup>.</p>
+                    <p className="text">В правильной трехугольной пирамиде боковое ребро {side}√{sideSqrt} см и 
+                        составляет с плоскостью основания угол {angle}<sup>o</sup>.</p>
                     <p className="text">Найти объем.</p>
                     <form className="input">
-                        <UnitInput parameters={'Боковое ребро'} value={side} func={setSide}/>
-                        <AngleInput parameters={'Угол'} value={angle} func={setAngle}/>
+                        <UnitInput 
+                            parameters={'Боковое ребро'} 
+                            value={side}
+                            valueSqrt={sideSqrt}
+                            func={setSide}
+                            funcSqrt={setSideSqrt}/>
+                        <AngleInput 
+                            parameters={'Угол'} 
+                            value={angle} 
+                            func={setAngle}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

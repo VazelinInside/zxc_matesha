@@ -7,12 +7,14 @@ import Converter from "./UI/Сonverter";
 const PYRAMID = pyramid
 
 const PyramidThird = (props) => {
-    const [height, setHeight] = useState('')
-    const [apothem, setApothem] = useState('')
+    const [height, setHeight] = useState(1)
+    const [apothem, setApothem] = useState(1)
+    const [heightSqrt, setHeightSqrt] = useState(1)
+    const [apothemSqrt, setApothemSqrt] = useState(1)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UsePyramidThird(height, apothem, setSquareFull) 
+       return UsePyramidThird(height, apothem, heightSqrt, apothemSqrt, setSquareFull) 
     } 
 
     function btnResolve() {
@@ -36,11 +38,22 @@ const PyramidThird = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">В правильной трехугольной пирамиде высота {height} см, апофема {apothem} см.</p>
+                    <p className="text">В правильной трехугольной пирамиде высота {height}√{heightSqrt} см, 
+                        апофема {apothem}√{apothemSqrt} см.</p>
                     <p className="text">Найти площадь полной поверхности.</p>
                     <form className="input">
-                        <UnitInput parameters={'Высота'} value={height} func={setHeight}/>
-                        <UnitInput parameters={'Апофема'} value={apothem} func={setApothem}/>
+                        <UnitInput 
+                            parameters={'Высота'} 
+                            value={height}
+                            valueSqrt={heightSqrt}
+                            func={setHeight}
+                            funcSqrt={setHeightSqrt}/>
+                        <UnitInput 
+                            parameters={'Апофема'} 
+                            value={apothem}
+                            valueSqrt={apothemSqrt}
+                            func={setApothem}
+                            funcSqrt={setApothemSqrt}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

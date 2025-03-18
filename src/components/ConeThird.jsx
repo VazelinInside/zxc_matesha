@@ -8,8 +8,9 @@ import Converter from "./UI/Сonverter";
 const CONE = cone
 
 const ConeThird = (props) => {
-    const [radius, setRadius] = useState('')
-    const [angle, setAngle] = useState('')
+    const [radius, setRadius] = useState(1)
+    const [radiusSqrt, setRadiusSqrt] = useState(1)
+    const [angle, setAngle] = useState(1)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
@@ -37,11 +38,20 @@ const ConeThird = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">Образующая наклонена к плоскости основания под углом в {angle}<sup>o</sup> радиус равен {radius} см.</p>
+                    <p className="text">Образующая наклонена к плоскости основания под 
+                        углом в {angle}<sup>o</sup> радиус равен {radius}√{radiusSqrt} см.</p>
                     <p className="text">Найти площадь полной поверхности.</p>
                     <form className="input">
-                        <UnitInput parameters={'Радиус'} value={radius} func={setRadius}/>
-                        <AngleInput parameters={'Угол'} value={angle} func={setAngle}/>
+                        <UnitInput 
+                            parameters={'Радиус'} 
+                            value={radius}
+                            valueSqrt={radiusSqrt}
+                            func={setRadius}
+                            funcSqrt={setRadiusSqrt}/>
+                        <AngleInput 
+                            parameters={'Угол'} 
+                            value={angle} 
+                            func={setAngle}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

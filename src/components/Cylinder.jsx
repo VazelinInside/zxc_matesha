@@ -7,8 +7,10 @@ import Converter from "./UI/Сonverter";
 const CYLINDER = cylinder
 
 const Cylinder = (props) => {
-    const [diagonal, setDiagonal] = useState('')
-    const [diametr, setDiametr] = useState('')
+    const [diagonal, setDiagonal] = useState(1)
+    const [diametr, setDiametr] = useState(1)
+    const [diagonalSqrt, setDiagonalSqrt] = useState(1)
+    const [diametrSqrt, setDiametrSqrt] = useState(1)
     const [volume, setVolume] = useState(0)
     const [square, setSquare] = useState(0)
     const [btn, setBtn] = useState(false)
@@ -38,11 +40,22 @@ const Cylinder = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">Диагональ осевого сечения цилиндра {diagonal} см, диаметр основания {diametr} см.</p>
+                    <p className="text">Диагональ осевого сечения цилиндра {diagonal}√{diagonalSqrt} см, 
+                        диаметр основания {diametr}√{diametrSqrt} см.</p>
                     <p className="text">Найти объём и полную поверхность цилиндра.</p>
                     <form className="input">
-                        <UnitInput parameters={'Диагональ'} value={diagonal} func={setDiagonal}/>
-                        <UnitInput parameters={'Диаметр'} value={diametr} func={setDiametr}/>
+                        <UnitInput 
+                            parameters={'Диагональ'} 
+                            value={diagonal}
+                            valueSqrt={diagonalSqrt}
+                            func={setDiagonal}
+                            funcSqrt={setDiagonalSqrt}/>
+                        <UnitInput 
+                            parameters={'Диаметр'} 
+                            value={diametr}
+                            valueSqrt={diametrSqrt}
+                            func={setDiametr}
+                            funcSqrt={setDiametrSqrt}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

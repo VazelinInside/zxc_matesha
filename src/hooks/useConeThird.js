@@ -9,6 +9,6 @@ export const UseConeThird = (radius, angle, funcSquareFull) => {
         let generatrix = radius / Math.cos(radian)
 
         let squareFull = Math.PI * (radius ** 2) + Math.PI * radius * generatrix
-        funcSquareFull(round100(squareFull) + 'П')
+        funcSquareFull(round100(squareFull) + 'π')
     }
 }

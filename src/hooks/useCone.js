@@ -9,7 +9,7 @@ export const UseCone = (generatrix, height, funcVolume, funcSquareFull) => {
 
         let volume = (radius ** 2) * height / 3
         let squareFull = radius * (Number(generatrix) + radius)
-        funcVolume(round100(volume) + 'П')
-        funcSquareFull(round100(squareFull) + 'П')
+        funcVolume(round100(volume) + 'π')
+        funcSquareFull(round100(squareFull) + 'π')
     }
 }

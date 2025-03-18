@@ -11,7 +11,7 @@ export const UseTrunCone = (radius, radiusSecond, angle, funcVolume, funcSquareF
 
         let volume = height * (radius ** 2 + radius * radiusSecond + radiusSecond ** 2) / 3
         let squareFull = (radius * generatrix + radiusSecond * generatrix + radius ** 2 + radiusSecond ** 2)
-        funcVolume(round100(volume) + 'П')
-        funcSquareFull(round100(squareFull) + 'П')
+        funcVolume(round100(volume) + 'π')
+        funcSquareFull(round100(squareFull) + 'π')
     }
 }

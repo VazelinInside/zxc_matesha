@@ -13,7 +13,7 @@ export const UseCylinderSecond = (diagonal, angle, funcSquareCut, funcVolume, fu
         let squareSide = 2 * radius * height
         let squareCut = height * 2 * radius
         funcSquareCut(round100(squareCut))
-        funcVolume(round100(volume) + 'П')
-        funcSquareSide(round100(squareSide) + 'П')
+        funcVolume(round100(volume) + 'π')
+        funcSquareSide(round100(squareSide) + 'π')
     }
 }

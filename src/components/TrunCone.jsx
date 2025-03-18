@@ -8,9 +8,11 @@ import Converter from "./UI/Сonverter";
 const TRUNCONE = trunCone
 
 const TrunCone = (props) => {
-    const [radius, setRadius] = useState('')
-    const [radiusSecond, setRadiusSecond] = useState('')
-    const [angle, setAngle] = useState('')
+    const [radius, setRadius] = useState(1)
+    const [radiusSecond, setRadiusSecond] = useState(1)
+    const [radiusSqrt, setRadiusSqrt] = useState(1)
+    const [radiusSecondSqrt, setRadiusSecondSqrt] = useState(1)
+    const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
@@ -40,13 +42,26 @@ const TrunCone = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">Радиусы усеченного конуса {radius} см и {radiusSecond} см,
+                    <p className="text">Радиусы усеченного конуса {radius}√{radiusSqrt} см и {radiusSecond}√{radiusSecondSqrt} см,
                     образующая наклонена к большему основанию под углом {angle}<sup>o</sup>.</p>
                     <p className="text">Найти объем, площадь полной поверхности.</p>
                     <form className="input">
-                        <UnitInput parameters={'Радиус меньшего основания'} value={radius} func={setRadius}/>
-                        <UnitInput parameters={'Радиус большего основания'} value={radiusSecond} func={setRadiusSecond}/>
-                        <AngleInput parameters={'Угол'} value={angle} func={setAngle}/>
+                        <UnitInput 
+                            parameters={'Радиус меньшего основания'} 
+                            value={radius} 
+                            valueSqrt={radiusSqrt} 
+                            func={setRadius} 
+                            funcSqrt={setRadiusSqrt}/>
+                        <UnitInput 
+                            parameters={'Радиус большего основания'} 
+                            value={radiusSecond}
+                            valueSqrt={radiusSecondSqrt}
+                            func={setRadiusSecond}
+                            funcSqrt={setRadiusSecondSqrt}/>
+                        <AngleInput 
+                            parameters={'Угол'} 
+                            value={angle} 
+                            func={setAngle}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

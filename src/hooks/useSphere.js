@@ -9,7 +9,7 @@ export const UseSphere = (distance, radiusMini, funcVolume, funcSquareFull) => {
 
         let volume = radius ** 3 * 4 / 3
         let squareFull = radius ** 2 * 4
-        funcVolume(round100(volume) + 'П')
-        funcSquareFull(round100(squareFull) + 'П')
+        funcVolume(round100(volume) + 'π')
+        funcSquareFull(round100(squareFull) + 'π')
     }
 }

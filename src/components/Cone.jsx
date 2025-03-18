@@ -7,8 +7,10 @@ import Converter from "./UI/Сonverter";
 const CONE = cone
 
 const Cone = (props) => {
-    const [generatrix, setGeneratrix] = useState('')
-    const [height, setHeight] = useState('')
+    const [generatrix, setGeneratrix] = useState(1)
+    const [height, setHeight] = useState(1)
+    const [generatrixSqrt, setGeneratrixSqrt] = useState(1)
+    const [heightSqrt, setHeightSqrt] = useState(1)
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
@@ -28,7 +30,7 @@ const Cone = (props) => {
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Конус" №1</h1>
             <div className="block__given">
-                <div className="block__resulve">
+                <div className="block__resolve">
                     <img className="image" src={CONE}/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
@@ -38,11 +40,21 @@ const Cone = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">Высота конуса {height} см, образующая {generatrix} см.</p>
+                    <p className="text">Высота конуса {height}√{heightSqrt} см, образующая {generatrix}√{generatrixSqrt} см.</p>
                     <p className="text">Найти объем, площадь полной поверхности.</p>
                     <form className="input">
-                        <UnitInput parameters={'Образующая'} value={generatrix} func={setGeneratrix}/>
-                        <UnitInput parameters={'Высота'} value={height} func={setHeight}/>
+                        <UnitInput 
+                            parameters={'Образующая'} 
+                            value={generatrix}
+                            valueSqrt={generatrixSqrt}
+                            func={setGeneratrix}
+                            funcSqrt={setGeneratrixSqrt}/>
+                        <UnitInput 
+                            parameters={'Высота'} 
+                            value={height}
+                            valueSqrt={heightSqrt}
+                            func={setHeight}
+                            funcSqrt={setHeightSqrt}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

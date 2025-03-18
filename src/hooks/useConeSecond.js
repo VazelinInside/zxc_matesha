@@ -11,6 +11,6 @@ export const UseConeSecond = (generatrix, angle, funcSquareFull) => {
         let squareTop = Math.PI * (radius ** 2)
 
         let squareFull = radius * generatrix + squareTop
-        funcSquareFull(round100(squareFull) + 'П')
+        funcSquareFull(round100(squareFull) + 'π')
     }
 }

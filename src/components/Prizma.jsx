@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import UnitInput from "./UI/UnitInput";
-import { UseVolumeAndSquare } from "../hooks/usePrizma";
+import { UsePrizma } from "../hooks/usePrizma";
 import prizma from "../photo/1типовая.png"
 import Converter from "./UI/Сonverter";
 
 const PRIZMA = prizma
 
 const Prizma = (props) => {
-    const [length, setLength] = useState('')
-    const [width, setWidth] = useState('')
-    const [diagonal, setDiagonal] = useState('')
+    const [length, setLength] = useState(1)
+    const [width, setWidth] = useState(1)
+    const [diagonal, setDiagonal] = useState(1)
+    const [lengthSqrt, setLengthSqrt] = useState(1)
+    const [widthSqrt, setWidthSqrt] = useState(1)
+    const [diagonalSqrt, setDiagonalSqrt] = useState(1)
     const [volume, setVolume] = useState(0)
     const [square, setSquare] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseVolumeAndSquare(length, width, diagonal, setVolume, setSquare) 
+       return UsePrizma(length, width, diagonal, lengthSqrt, widthSqrt, diagonalSqrt, setVolume, setSquare) 
     } 
 
     function btnResolve() {
@@ -39,12 +42,28 @@ const Prizma = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">Длина и ширина прямоугольного параллелепипеда {length} см и {width} см, диагональ {diagonal} см.</p>
+                    <p className="text">Длина и ширина прямоугольного параллелепипеда {length}√{lengthSqrt} см и {width}√{widthSqrt} см, 
+                        диагональ {diagonal}√{diagonalSqrt} см.</p>
                     <p className="text">Найти объём и полную поверхность параллелепипеда.</p>
                     <form className="input">
-                        <UnitInput parameters={'Длина'} value={length} func={setLength}/>
-                        <UnitInput parameters={'Ширина'} value={width} func={setWidth}/>
-                        <UnitInput parameters={'Диагональ'} value={diagonal} func={setDiagonal}/>
+                        <UnitInput 
+                            parameters={'Длина'} 
+                            value={length} 
+                            valueSqrt={lengthSqrt}
+                            funcSqrt={setLengthSqrt}
+                            func={setLength}/>
+                        <UnitInput 
+                            parameters={'Ширина'} 
+                            value={width}
+                            valueSqrt={widthSqrt}
+                            funcSqrt={setWidthSqrt}
+                            func={setWidth}/>
+                        <UnitInput 
+                            parameters={'Диагональ'} 
+                            value={diagonal}
+                            valueSqrt={diagonalSqrt}
+                            funcSqrt={setDiagonalSqrt}
+                            func={setDiagonal}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

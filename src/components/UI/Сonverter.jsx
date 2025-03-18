@@ -22,7 +22,7 @@ const Converter = (props) => {
 
     return (
         <div className="converter">
-            <form className="elem">
+            <form className="elem elem_conv">
                 <ConverterInput parameters={'Конвертировать в см:'} value={number} funcLen={setUnit} func={setNumber}/>
             </form>
             <button className="button" onClick={() => btnResolve()}>Конвертировать: {resultNumber} см</button>

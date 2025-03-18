@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { UseVolumePrizma } from "../hooks/usePrizmaSecond";
+import { UsePrizmaSecond } from "../hooks/usePrizmaSecond";
 import AngleInput from "./UI/AngleInput";
 import UnitInput from "./UI/UnitInput";
 import prizma from "../photo/2типовая.png"
@@ -8,14 +8,17 @@ import Converter from "./UI/Сonverter";
 const PRIZMA = prizma
 
 const PrizmaSecond = (props) => {
-    const [length, setLength] = useState('')
-    const [width, setWidth] = useState('')
-    const [angle, setAngle] = useState('')
-    const [square, setSquare] = useState('')
+    const [length, setLength] = useState(1)
+    const [width, setWidth] = useState(1)
+    const [square, setSquare] = useState(1)
+    const [lengthSqrt, setLengthSqrt] = useState(1)
+    const [widthSqrt, setWidthSqrt] = useState(1)
+    const [squareSqrt, setSquareSqrt] = useState(1)
+    const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseVolumePrizma(length, width, angle, square, setVolume) 
+       return UsePrizmaSecond(length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt, setVolume) 
     } 
 
     function btnResolve() {
@@ -39,13 +42,33 @@ const PrizmaSecond = (props) => {
                 </div>
                 <div className="information">
                     <Converter/>
-                    <p className="text">В прямом парарллелепипеде стороны основания {length} см и {width} см, угол между ними {angle}<sup>o</sup>.</p>
-                    <p className="text">Найти объём параллелепипеда, если площадь боковой поверхности его {square} см<sup>2</sup>.</p>
+                    <p className="text">В прямом парарллелепипеде стороны основания {length}√{lengthSqrt} см и {width}√{widthSqrt} см, 
+                        угол между ними {angle}<sup>o</sup>.</p>
+                    <p className="text">Найти объём параллелепипеда, 
+                        если площадь боковой поверхности его {square}√{squareSqrt} см<sup>2</sup>.</p>
                     <form className="input">
-                        <UnitInput parameters={'Длина'} value={length} func={setLength}/>
-                        <UnitInput parameters={'Ширина'} value={width} func={setWidth}/>
-                        <AngleInput parameters={'Угол'} value={angle} func={setAngle}/>
-                        <UnitInput parameters={'Площадь'} value={square} func={setSquare}/>
+                        <UnitInput 
+                            parameters={'Длина'} 
+                            value={length}
+                            valueSqrt={lengthSqrt}
+                            funcSqrt={setLengthSqrt}
+                            func={setLength}/>
+                        <UnitInput 
+                            parameters={'Ширина'} 
+                            value={width}
+                            valueSqrt={widthSqrt}
+                            funcSqrt={setWidthSqrt}
+                            func={setWidth}/>
+                        <AngleInput 
+                            parameters={'Угол'} 
+                            value={angle}
+                            func={setAngle}/>
+                        <UnitInput 
+                            parameters={'Площадь'} 
+                            value={square}
+                            valueSqrt={squareSqrt}
+                            funcSqrt={setSquareSqrt} 
+                            func={setSquare}/>
                     </form>
                     <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>

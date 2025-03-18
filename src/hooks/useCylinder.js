@@ -9,8 +9,7 @@ export const UseCylinder = (diagonal, diametr, funcVolume, funcSquare) => {
 
         let volume = ((diametr / 2) ** 2) * height
         let square = 2 * (diametr / 2) * height + 2 * Math.PI * (diametr / 2) ** 2
-        funcVolume(round100(volume) + 'П')
-        funcSquare(round100(square) + 'П')
-        console.log(diagonal, diametr, height, volume, square)
+        funcVolume(round100(volume) + 'π')
+        funcSquare(round100(square) + 'π')
     }
 }
