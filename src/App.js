@@ -11,7 +11,7 @@ import TrunPiramidSecond from "./components/TrunPiramidSecond.jsx";
 import Cylinder from "./components/Cylinder.jsx";
 import CylinderSecond from "./components/CylinderSecond.jsx";
 import Cone from "./components/Cone.jsx";
-import ConeSecond from "./components/ConeSecons.jsx";
+import ConeSecond from "./components/ConeSecond.jsx";
 import ConeThird from "./components/ConeThird.jsx";
 import TrunCone from "./components/TrunCone.jsx";
 import TrunConeSecond from "./components/TrunConeSecond.jsx";

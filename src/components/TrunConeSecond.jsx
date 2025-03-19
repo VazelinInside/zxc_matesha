@@ -17,7 +17,7 @@ const TrunConeSecond = (props) => {
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseTrunConeSecond(radius, height, angle, setVolume, setSquareFull) 
+       return UseTrunConeSecond(radius, height, radiusSqrt, heightSqrt, angle, setVolume, setSquareFull) 
     } 
 
     function btnResolve() {

@@ -14,7 +14,7 @@ const ConeSecond = (props) => {
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseConeSecond(generatrix, angle, setSquareFull) 
+       return UseConeSecond(generatrix, generatrixSqrt, angle, setSquareFull) 
     } 
 
     function btnResolve() {

@@ -15,7 +15,7 @@ const Sphere = (props) => {
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseSphere(distance, radiusMini, setVolume, setSquareFull) 
+       return UseSphere(distance, radiusMini, distanceSqrt, radiusMiniSqrt, setVolume, setSquareFull) 
     } 
 
     function btnResolve() {
@@ -53,7 +53,7 @@ const Sphere = (props) => {
                         <UnitInput 
                             parameters={'Радиус сечения'} 
                             value={radiusMini}
-                            valueSqrt={radiusMini}
+                            valueSqrt={radiusMiniSqrt}
                             func={setRadiusMini}
                             funcSqrt={setRadiusMiniSqrt}/>
                     </form>

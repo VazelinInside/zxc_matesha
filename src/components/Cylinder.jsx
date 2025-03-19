@@ -15,7 +15,7 @@ const Cylinder = (props) => {
     const [square, setSquare] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseCylinder(diagonal, diametr, setVolume, setSquare) 
+       return UseCylinder(diagonal, diametr, diagonalSqrt, diametrSqrt, setVolume, setSquare) 
     } 
 
     function btnResolve() {

@@ -1,4 +1,4 @@
-export const UseConeThird = (radius, angle, funcSquareFull) => {
+export const UseConeThird = (radius, radiusSqrt, angle, funcSquareFull) => {
 
     function round100(number) {
         return Math.round(number * 100) / 100
@@ -6,9 +6,9 @@ export const UseConeThird = (radius, angle, funcSquareFull) => {
     
     if (radius > 0) {
         let radian = angle * Math.PI / 180
-        let generatrix = radius / Math.cos(radian)
+        let generatrix = (radius * Math.sqrt(radiusSqrt)) / Math.cos(radian)
 
-        let squareFull = Math.PI * (radius ** 2) + Math.PI * radius * generatrix
+        let squareFull = ((radius * Math.sqrt(radiusSqrt)) ** 2) + radius * Math.sqrt(radiusSqrt) * generatrix
         funcSquareFull(round100(squareFull) + 'π')
     }
 }

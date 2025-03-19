@@ -1,13 +1,13 @@
-export const UseCylinderSecond = (diagonal, angle, funcSquareCut, funcVolume, funcSquareSide) => {
+export const UseCylinderSecond = (diagonal, diagonalSqrt, angle, funcSquareCut, funcVolume, funcSquareSide) => {
 
     function round100(number) {
         return Math.round(number * 100) / 100
     }
     
-    if (diagonal > 0) {
+    if (angle > 0 && diagonal > 0) {
         let radian = angle * Math.PI / 180
-        let height = Math.round(diagonal * Math.sin(radian))
-        let radius = Math.sqrt((diagonal ** 2) - (height ** 2)) / 2
+        let height = Math.round(diagonal * Math.sqrt(diagonalSqrt) * Math.sin(radian))
+        let radius = Math.sqrt(((diagonal * Math.sqrt(diagonalSqrt)) ** 2) - (height ** 2)) / 2
 
         let volume = (radius ** 2) * height
         let squareSide = 2 * radius * height

@@ -14,7 +14,7 @@ const ConeThird = (props) => {
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
     const resolve = () => {
-       return UseConeThird(radius, angle, setSquareFull) 
+       return UseConeThird(radius, radiusSqrt, angle, setSquareFull) 
     } 
 
     function btnResolve() {
