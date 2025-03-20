@@ -16,15 +16,10 @@ const PrizmaSecond = (props) => {
     const [squareSqrt, setSquareSqrt] = useState(1)
     const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
-    const [btn, setBtn] = useState(false) 
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UsePrizmaSecond(length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt, setVolume) 
-    }, [btn, length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt])
+    }, [length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt])
 
     return (
         <div className="block">
@@ -67,7 +62,6 @@ const PrizmaSecond = (props) => {
                             funcSqrt={setSquareSqrt} 
                             func={setSquare}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

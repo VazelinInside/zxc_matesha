@@ -15,15 +15,10 @@ const Pyramid = (props) => {
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [squareSide, setSquareSide] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UsePyramid(length, height, lengthSqrt, heightSqrt, setVolume, setSquareFull, setSquareSide, setSide) 
-    }, [btn, length, height, lengthSqrt, heightSqrt])
+    }, [length, height, lengthSqrt, heightSqrt])
 
     return (
         <div className="block">
@@ -58,7 +53,6 @@ const Pyramid = (props) => {
                             func={setheight}
                             funcSqrt={setheightSqrt}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

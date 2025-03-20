@@ -15,15 +15,10 @@ const TrunConeSecond = (props) => {
     const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UseTrunConeSecond(radius, height, radiusSqrt, heightSqrt, angle, setVolume, setSquareFull) 
-    }, [btn, radius, height, radiusSqrt, heightSqrt, angle])
+    }, [radius, height, radiusSqrt, heightSqrt, angle])
 
     return (
         <div className="block">
@@ -60,7 +55,6 @@ const TrunConeSecond = (props) => {
                             value={angle} 
                             func={setAngle}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

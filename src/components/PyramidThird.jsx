@@ -12,15 +12,10 @@ const PyramidThird = (props) => {
     const [heightSqrt, setHeightSqrt] = useState(1)
     const [apothemSqrt, setApothemSqrt] = useState(1)
     const [squareFull, setSquareFull] = useState(0)
-    const [btn, setBtn] = useState(false)
-    
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UsePyramidThird(height, apothem, heightSqrt, apothemSqrt, setSquareFull) 
-    }, [btn, height, apothem, heightSqrt, apothemSqrt])
+    }, [height, apothem, heightSqrt, apothemSqrt])
 
     return (
         <div className="block">
@@ -52,7 +47,6 @@ const PyramidThird = (props) => {
                             func={setApothem}
                             funcSqrt={setApothemSqrt}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

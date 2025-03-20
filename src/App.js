@@ -1,6 +1,5 @@
 import React, {useState } from "react";
 import './styles/app.css'
-import './styles/adaptive.css'
 import Prizma from "./components/Prizma.jsx";
 import PrizmaSecond from "./components/PrizmaSecond.jsx";
 import Pyramid from "./components/Pyramid.jsx";

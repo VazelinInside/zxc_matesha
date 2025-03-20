@@ -17,16 +17,11 @@ const TrunPiramid = (props) => {
     const [squareSide, setSquareSide] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [volume, setVolume] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UseTrunPiramid(lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, 
             heightSqrt, setSideRib, setSquareSide, setSquareFull, setVolume) 
-    }, [btn, lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, heightSqrt])
+    }, [lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, heightSqrt])
 
     return (
         <div className="block">
@@ -67,7 +62,6 @@ const TrunPiramid = (props) => {
                             func={setHeight}
                             funcSqrt={setHeightSqrt}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

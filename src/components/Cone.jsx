@@ -13,15 +13,10 @@ const Cone = (props) => {
     const [heightSqrt, setHeightSqrt] = useState(1)
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UseCone(generatrix, generatrixSqrt, height, heightSqrt, setVolume, setSquareFull) 
-    }, [btn, generatrix, generatrixSqrt, height, heightSqrt])
+    }, [generatrix, generatrixSqrt, height, heightSqrt])
 
     return (
         <div className="block">
@@ -53,7 +48,6 @@ const Cone = (props) => {
                             func={setHeight}
                             funcSqrt={setHeightSqrt}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

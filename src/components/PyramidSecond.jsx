@@ -12,15 +12,10 @@ const PyramidSecond = (props) => {
     const [sideSqrt, setSideSqrt] = useState(1)
     const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UsePyramidSecond(side, sideSqrt, angle, setVolume) 
-    }, [btn, side, sideSqrt, angle])
+    }, [side, sideSqrt, angle])
 
     return (
         <div className="block">
@@ -50,7 +45,6 @@ const PyramidSecond = (props) => {
                             value={angle} 
                             func={setAngle}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

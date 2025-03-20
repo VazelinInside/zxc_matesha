@@ -13,15 +13,10 @@ const Sphere = (props) => {
     const [radiusMiniSqrt, setRadiusMiniSqrt] = useState(1)
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UseSphere(distance, radiusMini, distanceSqrt, radiusMiniSqrt, setVolume, setSquareFull) 
-    }, [btn, distance, radiusMini, distanceSqrt, radiusMiniSqrt])
+    }, [distance, radiusMini, distanceSqrt, radiusMiniSqrt])
 
     return (
         <div className="block">
@@ -54,7 +49,6 @@ const Sphere = (props) => {
                             func={setRadiusMini}
                             funcSqrt={setRadiusMiniSqrt}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

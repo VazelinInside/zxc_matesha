@@ -1,16 +1,17 @@
-export const UseConeSecond = (generatrix, generatrixSqrt, angle, funcSquareFull) => {
+export const UseConeSecond = (generatrixNum, generatrixSqrt, angle, funcSquareFull) => {
 
     function round100(number) {
         return Math.round(number * 100) / 100
     }
 
+    var generatrix = generatrixNum * Math.sqrt(generatrixSqrt)
+
     if (generatrix > 0) {
         let radian = (angle / 2) * Math.PI / 180
-        let height = Math.sin(radian) * generatrix * Math.sqrt(generatrixSqrt)
-        let radius = Math.sqrt(((generatrix * Math.sqrt(generatrixSqrt)) ** 2) - (height ** 2))
+        let radius = Math.sin(radian) * generatrix
         let squareBase = (radius ** 2)
 
-        let squareFull = radius * generatrix * Math.sqrt(generatrixSqrt) + squareBase
+        let squareFull = radius * generatrix + squareBase
         funcSquareFull(round100(squareFull) + 'π')
     }
 }

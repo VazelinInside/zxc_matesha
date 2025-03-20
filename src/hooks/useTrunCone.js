@@ -1,16 +1,19 @@
-export const UseTrunCone = (radius, radiusSecond, radiusSqrt, radiusSecondSqrt, angle, funcVolume, funcSquareFull) => {
+export const UseTrunCone = (radiusNum, radiusSecondsNum, radiusSqrt, radiusSecondSqrt, angle, funcVolume, funcSquareFull) => {
 
     function round100(number) {
         return Math.round(number * 100) / 100
     }
+
+    var radius = radiusNum * Math.sqrt(radiusSqrt)
+    var radiusSecond = radiusSecondsNum * Math.sqrt(radiusSecondSqrt)
     
     if ((radius > 0) && (radiusSecond > radius)) {
         let radian = angle * Math.PI / 180
-        let generatrix = (radiusSecond * Math.sqrt(radiusSecondSqrt) - radius * Math.sqrt(radiusSqrt)) / Math.cos(radian) 
+        let generatrix = (radiusSecond - radius) / Math.cos(radian) 
         let height = Math.sin(radian) * generatrix
 
-        let volume = height * ((radius * Math.sqrt(radiusSqrt)) ** 2 + radius * Math.sqrt(radiusSqrt) * radiusSecond * Math.sqrt(radiusSecondSqrt) + (radiusSecond * Math.sqrt(radiusSecondSqrt)) ** 2) / 3
-        let squareFull = (radius * Math.sqrt(radiusSqrt) * generatrix + radiusSecond * Math.sqrt(radiusSecondSqrt) * generatrix + (radius * Math.sqrt(radiusSqrt)) ** 2 + (radiusSecond * Math.sqrt(radiusSecondSqrt)) ** 2)
+        let volume = height * (radius ** 2 + radius * radiusSecond + radiusSecond ** 2) / 3
+        let squareFull = (radius * generatrix + radiusSecond * generatrix + radius ** 2 + radiusSecond ** 2)
         funcVolume(round100(volume) + 'π')
         funcSquareFull(round100(squareFull) + 'π')
     }

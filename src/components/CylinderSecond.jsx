@@ -14,15 +14,10 @@ const CylinderSecond = (props) => {
     const [squareCut, setSquareCut] = useState(0)
     const [volume, setVolume] = useState(0)
     const [squareSide, setSquareSide] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UseCylinderSecond(diagonal, diagonalSqrt, angle, setSquareCut, setVolume, setSquareSide)
-    }, [btn, diagonal, diagonalSqrt, angle])
+    }, [diagonal, diagonalSqrt, angle])
 
     return (
         <div className="block">
@@ -53,7 +48,6 @@ const CylinderSecond = (props) => {
                             value={angle} 
                             func={setAngle}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

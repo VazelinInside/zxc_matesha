@@ -12,15 +12,10 @@ const ConeThird = (props) => {
     const [radiusSqrt, setRadiusSqrt] = useState(1)
     const [angle, setAngle] = useState(1)
     const [squareFull, setSquareFull] = useState(0)
-    const [btn, setBtn] = useState(false)
-
-    function btnResolve() {
-        setBtn((btn) => !btn)
-    }
       
     useEffect(() => {
         return UseConeThird(radius, radiusSqrt, angle, setSquareFull) 
-    }, [btn, radius, radiusSqrt, angle])
+    }, [radius, radiusSqrt, angle])
 
     return (
         <div className="block">
@@ -50,7 +45,6 @@ const ConeThird = (props) => {
                             value={angle} 
                             func={setAngle}/>
                     </form>
-                    <button className="button" onClick={() => btnResolve()}>Найти</button>
                 </div>
             </div>
         </div>

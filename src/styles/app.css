@@ -112,14 +112,14 @@
     font: 600 24px/1.5 Arial;
 }
 
-.button {
+.span {
     color: #fff;
     background: linear-gradient(45deg, #534fa6, #a45deb);
     box-shadow: 0px 0px 15px 0px #a45deb;
-    border: none;
     border-radius: 20px;
     padding: 5px 0px;
     font: 20px/1.5 Arial;
+    text-align: center;
 }
 
 .menu{
