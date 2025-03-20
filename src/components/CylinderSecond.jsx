@@ -15,24 +15,21 @@ const CylinderSecond = (props) => {
     const [volume, setVolume] = useState(0)
     const [squareSide, setSquareSide] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UseCylinderSecond(diagonal, diagonalSqrt, angle, setSquareCut, setVolume, setSquareSide) 
-    } 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UseCylinderSecond(diagonal, diagonalSqrt, angle, setSquareCut, setVolume, setSquareSide)
+    }, [btn, diagonal, diagonalSqrt, angle])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Цилиндр" №2</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={CYLINDER}/>
+                    <img className="image" src={CYLINDER} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">V = {volume} см<sup>3</sup></p>

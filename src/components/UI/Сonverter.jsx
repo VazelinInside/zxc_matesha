@@ -7,23 +7,23 @@ const Converter = (props) => {
     const [unit, setUnit] = useState('м')
     const [resultNumber, setResultNumber] = useState(0)
     const [btn, setBtn] = useState(false)
-
-    const resolve = () => {
-           return UseUnit(number, unit, setResultNumber) 
-        } 
     
         function btnResolve() {
             setBtn((btn) => !btn)
         }
           
         useEffect(() => {
-            resolve()
-        }, [btn])
+            return UseUnit(number, unit, setResultNumber) 
+        }, [btn, number, unit])
 
     return (
         <div className="converter">
             <form className="elem elem_conv">
-                <ConverterInput parameters={'Конвертировать в см:'} value={number} funcLen={setUnit} func={setNumber}/>
+                <ConverterInput 
+                    parameters={'Конвертировать в см:'} 
+                    value={number} 
+                    funcLen={setUnit} 
+                    func={setNumber}/>
             </form>
             <button className="button" onClick={() => btnResolve()}>Конвертировать: {resultNumber} см</button>
         </div>

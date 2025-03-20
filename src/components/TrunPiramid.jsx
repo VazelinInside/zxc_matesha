@@ -18,24 +18,22 @@ const TrunPiramid = (props) => {
     const [squareFull, setSquareFull] = useState(0)
     const [volume, setVolume] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UseTrunPiramid(lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, heightSqrt, setSideRib, setSquareSide, setSquareFull, setVolume) 
-    } 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UseTrunPiramid(lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, 
+            heightSqrt, setSideRib, setSquareSide, setSquareFull, setVolume) 
+    }, [btn, lengthDown, lengthTop, height, lengthDownSqrt, lengthTopSqrt, heightSqrt])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Усеченная пирамида" №1</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={PYRAMID}/>
+                    <img className="image" src={PYRAMID} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">Боковое ребро = {sideRib} см</p>

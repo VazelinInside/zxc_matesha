@@ -1,5 +1,6 @@
 export const UseUnit = (number, unit, funcResultNumber) => {
 
+
     switch (unit) {
         case 'м':
             number = number * 100;
@@ -8,11 +9,12 @@ export const UseUnit = (number, unit, funcResultNumber) => {
             number = number * 10;
             break;
         case 'см':
-            number = number;
+            number = number * 1;
             break;
         case 'мм':
             number = number / 10;
             break;
+        default:    
     }
 
     funcResultNumber(number)

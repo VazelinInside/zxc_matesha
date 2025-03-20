@@ -4,7 +4,7 @@ export const UsePrizmaSecond = (length, width, angle, square, lengthSqrt, widthS
         return Math.round(number * 100) / 100
     }
 
-    if (length, width, angle, square) {
+    if (length && width && angle && square) {
         let radian = angle * Math.PI / 180
         let perimeter = ((Number(length) * Math.sqrt(lengthSqrt)) + (Number(width) * Math.sqrt(widthSqrt))) * 2
         let height = (square * Math.sqrt(squareSqrt)) / perimeter

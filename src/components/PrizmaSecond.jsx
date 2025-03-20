@@ -16,25 +16,22 @@ const PrizmaSecond = (props) => {
     const [squareSqrt, setSquareSqrt] = useState(1)
     const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
-    const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UsePrizmaSecond(length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt, setVolume) 
-    } 
+    const [btn, setBtn] = useState(false) 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UsePrizmaSecond(length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt, setVolume) 
+    }, [btn, length, width, angle, square, lengthSqrt, widthSqrt, squareSqrt])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Призма" №2</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={PRIZMA}/>
+                    <img className="image" src={PRIZMA} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">V = {volume} см<sup>3</sup></p>

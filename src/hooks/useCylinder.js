@@ -1,12 +1,13 @@
-export const UseCylinder = (diagonal, diametr, diagonalSqrt, diametrSqrt, funcVolume, funcSquare) => {
+export const UseCylinder = (diagonalNum, diametrNum, diagonalSqrt, diametrSqrt, funcVolume, funcSquare) => {
 
     function round100(number) {
         return Math.round(number * 100) / 100
     }
+
+    var diagonal = diagonalNum * Math.sqrt(diagonalSqrt)
+    var diametr = diametrNum * Math.sqrt(diametrSqrt)
     
     if ((diametr > 0) && (diagonal > diametr)) {
-        let diagonal = diagonal * Math.sqrt(diagonalSqrt)
-        let diametr = diametr * Math.sqrt(diametrSqrt)
         let height = Math.sqrt((diagonal ** 2) - (diametr ** 2))
 
         let volume = ((diametr / 2) ** 2) * height

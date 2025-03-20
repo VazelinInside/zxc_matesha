@@ -14,24 +14,21 @@ const Sphere = (props) => {
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UseSphere(distance, radiusMini, distanceSqrt, radiusMiniSqrt, setVolume, setSquareFull) 
-    } 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UseSphere(distance, radiusMini, distanceSqrt, radiusMiniSqrt, setVolume, setSquareFull) 
+    }, [btn, distance, radiusMini, distanceSqrt, radiusMiniSqrt])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Шар" №1</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={SPHERE}/>
+                    <img className="image" src={SPHERE} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">V = {volume} см<sup>3</sup></p>

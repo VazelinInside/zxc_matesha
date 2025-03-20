@@ -13,24 +13,21 @@ const PyramidThird = (props) => {
     const [apothemSqrt, setApothemSqrt] = useState(1)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UsePyramidThird(height, apothem, heightSqrt, apothemSqrt, setSquareFull) 
-    } 
-
+    
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UsePyramidThird(height, apothem, heightSqrt, apothemSqrt, setSquareFull) 
+    }, [btn, height, apothem, heightSqrt, apothemSqrt])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Пирамида" №3</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={PYRAMID}/>
+                    <img className="image" src={PYRAMID} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">Sполн = {squareFull} см<sup>2</sup></p>

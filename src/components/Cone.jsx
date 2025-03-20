@@ -14,24 +14,21 @@ const Cone = (props) => {
     const [volume, setVolume] = useState(0)
     const [squareFull, setSquareFull] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UseCone(generatrix, generatrixSqrt, height, heightSqrt, setVolume, setSquareFull) 
-    } 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UseCone(generatrix, generatrixSqrt, height, heightSqrt, setVolume, setSquareFull) 
+    }, [btn, generatrix, generatrixSqrt, height, heightSqrt])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Конус" №1</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={CONE}/>
+                    <img className="image" src={CONE} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">V = {volume} см<sup>3</sup></p>

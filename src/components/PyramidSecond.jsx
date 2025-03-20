@@ -13,24 +13,21 @@ const PyramidSecond = (props) => {
     const [angle, setAngle] = useState(1)
     const [volume, setVolume] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UsePyramidSecond(side, sideSqrt, angle, setVolume) 
-    } 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UsePyramidSecond(side, sideSqrt, angle, setVolume) 
+    }, [btn, side, sideSqrt, angle])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Пирамида" №2</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                    <img className="image" src={PYRAMID}/>
+                    <img className="image" src={PYRAMID} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">V = {volume} см<sup>3</sup></p>

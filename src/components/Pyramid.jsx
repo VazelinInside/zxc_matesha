@@ -16,24 +16,21 @@ const Pyramid = (props) => {
     const [squareFull, setSquareFull] = useState(0)
     const [squareSide, setSquareSide] = useState(0)
     const [btn, setBtn] = useState(false)
-    const resolve = () => {
-       return UsePyramid(length, height, lengthSqrt, heightSqrt, setVolume, setSquareFull, setSquareSide, setSide) 
-    } 
 
     function btnResolve() {
         setBtn((btn) => !btn)
     }
       
     useEffect(() => {
-        resolve()
-    }, [btn])
+        return UsePyramid(length, height, lengthSqrt, heightSqrt, setVolume, setSquareFull, setSquareSide, setSide) 
+    }, [btn, length, height, lengthSqrt, heightSqrt])
 
     return (
         <div className="block">
             <h1 className="title">Типовая задача по теме: "Пирамида" №1</h1>
             <div className="block__given">
                 <div className="block__resolve">
-                <img className="image" src={PYRAMID}/>
+                <img className="image" src={PYRAMID} alt=""/>
                     <div className="resolve">
                         <h2 className="resolve__title">Решение</h2>
                         <p className="text">V = {volume} см<sup>3</sup></p>
