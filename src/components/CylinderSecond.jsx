@@ -21,7 +21,7 @@ const CylinderSecond = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Цилиндр" №2</h1>
+            <h1 className="title">Типовая задача №2 по теме "Цилиндр"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                     <img className="image" src={CYLINDER} alt=""/>

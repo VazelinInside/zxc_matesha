@@ -20,7 +20,7 @@ const Cone = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Конус" №1</h1>
+            <h1 className="title">Типовая задача №1 по теме "Конус"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                     <img className="image" src={CONE} alt=""/>

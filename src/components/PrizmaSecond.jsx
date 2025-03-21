@@ -23,7 +23,7 @@ const PrizmaSecond = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Призма" №2</h1>
+            <h1 className="title">Типовая задача №2 по теме "Призма"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                     <img className="image" src={PRIZMA} alt=""/>

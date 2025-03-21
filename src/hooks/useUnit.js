@@ -8,9 +8,6 @@ export const UseUnit = (number, unit, funcResultNumber) => {
         case 'дм':
             number = number * 10;
             break;
-        case 'см':
-            number = number * 1;
-            break;
         case 'мм':
             number = number / 10;
             break;

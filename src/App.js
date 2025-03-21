@@ -15,6 +15,7 @@ import ConeThird from "./components/ConeThird.jsx";
 import TrunCone from "./components/TrunCone.jsx";
 import TrunConeSecond from "./components/TrunConeSecond.jsx";
 import Sphere from "./components/Sphere.jsx";
+import SphereSecond from "./components/SphereSecond.jsx";
 
 function App() {
       const [activeComponent, setActiveComponent] = useState('prizma');
@@ -39,6 +40,7 @@ function App() {
         trunCone: <TrunCone/>,
         trunConeSecond: <TrunConeSecond/>,
         sphere: <Sphere/>,
+        sphereSecond: <SphereSecond/>
       }
 
   return (
@@ -59,6 +61,7 @@ function App() {
         <li onClick={() => handleMenuClick('trunCone')} className="menu__item">"Усеченный конус" №1</li>
         <li onClick={() => handleMenuClick('trunConeSecond')} className="menu__item">"Усеченный конус" №2</li>
         <li onClick={() => handleMenuClick('sphere')} className="menu__item">"Шар" №1</li>
+        <li onClick={() => handleMenuClick('sphereSecond')} className="menu__item">"Шар" №2</li>
       </ul>
       {components[activeComponent]}
     </div>

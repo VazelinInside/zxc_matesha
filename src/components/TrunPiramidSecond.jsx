@@ -25,7 +25,7 @@ const TrunPiramidSecond = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Усеченная пирамида" №2</h1>
+            <h1 className="title">Типовая задача №2 по теме "Усеченная пирамида"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                     <img className="image" src={PYRAMID} alt=""/>

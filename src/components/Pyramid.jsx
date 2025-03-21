@@ -22,7 +22,7 @@ const Pyramid = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Пирамида" №1</h1>
+            <h1 className="title">Типовая задача №1 по теме "Пирамида"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                 <img className="image" src={PYRAMID} alt=""/>

@@ -22,7 +22,7 @@ const TrunConeSecond = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Усеченный конус" №2</h1>
+            <h1 className="title">Типовая задача №2 по теме "Усеченный конус"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                     <img className="image" src={TRUNCONE} alt=""/>

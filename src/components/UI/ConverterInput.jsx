@@ -10,7 +10,6 @@ const ConverterInput = (props) => {
                 <select className="text__select" onChange={event => props.funcLen(event.target.value)}>
                     <option className="text" value="м">м</option>
                     <option className="text" value="дм">дм</option>
-                    <option className="text" value="см">см</option>
                     <option className="text" value="мм">мм</option>
                 </select> 
             </div>

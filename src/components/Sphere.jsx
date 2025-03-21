@@ -20,7 +20,7 @@ const Sphere = (props) => {
 
     return (
         <div className="block">
-            <h1 className="title">Типовая задача по теме: "Шар" №1</h1>
+            <h1 className="title">Типовая задача №1 по теме "Шар"</h1>
             <div className="block__given">
                 <div className="block__resolve">
                     <img className="image" src={SPHERE} alt=""/>
